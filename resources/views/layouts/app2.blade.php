@@ -16,16 +16,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	
 	<!-- Main Style -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="/css/style.css">
 	
 	<!-- Skins -->
-	<link rel="stylesheet" href="css/skins/skins.css">
+	<link rel="stylesheet" href="/css/skins/skins.css">
 	
 	<!-- Responsive Style -->
-	<link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="/css/responsive.css">
 	
 	<!-- Favicons -->
-	<link rel="shortcut icon" href="images/favicon.png">
+	<link rel="shortcut icon" href="/images/favicon.png">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
   
 </head>
 <body>
@@ -37,7 +38,7 @@
 
 	<header id="header">
 		<section class="container clearfix">
-			<div class="logo"><a href="index-2.html"><img alt="" src="images/logo.png"></a></div>
+			<div class="logo"><a href="index-2.html"><img alt="" src="/images/logo.png"></a></div>
 			<nav class="navigation">
 				<ul>
 					<li class="current_page_item"><a href="index-2.html">Home</a>
@@ -63,17 +64,20 @@
 							<li style="color: #000;"><a class="" href="{{ route('login') }}">Login</a></li>
                             <li><a class="" href="{{ route('register') }}">Register</a></li>
                         @else
+                        <li><a class="dropdown-item" href="{{ route('profile')}}">Profile</a></li>
                         <li>
                         	<a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         Logout
-                                    </a>
+                            </a>
+
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
                         </li>
+
                         @endguest
 							
 						</ul>
@@ -90,7 +94,13 @@
 		</div><!-- End container -->
 	</div><!-- End section-warp -->
 	
-	 @yield('content')
+	<section class="container main-content">
+		<div class="row">
+		 	@yield('content')
+
+		 	@include('layouts.sidebar')
+		</div>
+	</section>
 	
 	<footer id="footer">
 		<section class="container">
@@ -156,23 +166,23 @@
 <div class="go-up"><i class="icon-chevron-up"></i></div>
 
 <!-- js -->
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
-<script src="js/jquery.easing.1.3.min.js"></script>
-<script src="js/html5.js"></script>
-<script src="js/twitter/jquery.tweet.js"></script>
-<script src="js/jflickrfeed.min.js"></script>
-<script src="js/jquery.inview.min.js"></script>
-<script src="js/jquery.tipsy.js"></script>
-<script src="js/tabs.js"></script>
-<script src="js/jquery.flexslider.js"></script>
-<script src="js/jquery.prettyPhoto.js"></script>
-<script src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
-<script src="js/jquery.scrollTo.js"></script>
-<script src="js/jquery.nav.js"></script>
-<script src="js/tags.js"></script>
-<script src="js/jquery.bxslider.min.js"></script>
-<script src="js/custom.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="/js/jquery.easing.1.3.min.js"></script>
+<script src="/js/html5.js"></script>
+<script src="/js/twitter/jquery.tweet.js"></script>
+<script src="/js/jflickrfeed.min.js"></script>
+<script src="/js/jquery.inview.min.js"></script>
+<script src="/js/jquery.tipsy.js"></script>
+<script src="/js/tabs.js"></script>
+<script src="/js/jquery.flexslider.js"></script>
+<script src="/js/jquery.prettyPhoto.js"></script>
+<script src="/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+<script src="/js/jquery.scrollTo.js"></script>
+<script src="/js/jquery.nav.js"></script>
+<script src="/js/tags.js"></script>
+<script src="/js/jquery.bxslider.min.js"></script>
+<script src="/js/custom.js"></script>
 <!-- End js -->
 
 </body>

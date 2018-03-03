@@ -8,47 +8,48 @@
 					<div class="user-profile">
 						<div class="col-md-12">
 							<div class="page-content">
-								<h2>About {{Auth::user()->name}}</h2>
-								<div class="user-profile-img"><img src="../ask-me/images/demo/admin.jpg" alt="admin" width="60" height="60"></div>
+								<h2>About {{$user->first_name}}  {{$user->last_name}}</h2>
+								<button><a href="/user/edit">Edit</a></button>
+								<div class="user-profile-img"><img src="/images/avatar.jpg" alt="admin" width="60" height="60"></div>
 								<div class="ul_list ul_list-icon-ok about-user">
 									<ul>
-										<li><i class="icon-plus"></i>Registerd : <span>Jan 10, 2014</span></li>
-										<li><i class="icon-map-marker"></i>Country : <span>Egypt</span></li>
-										<li><i class="icon-globe"></i>Website : <a target="_blank" href="https://2code.info/">view</a></li>
+										<li><i class="icon-plus"></i>Registerd : <span>{{ date('Y-M-d',strtotime($user->created_at)) }}</span></li>
+										<li><i class="icon-map-marker"></i>Country : <span>{{$user->country->name}}</span></li>
+										<li><i class="icon-globe"></i>Website : <a target="_blank" href="{{ $user->webste}}">view</a></li>
 									</ul>
 								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi adipiscing gravida odio, sit amet suscipit risus ultrices eu. Fusce viverra neque at purus laoreet consequat. Vivamus vulputate posuere nisl quis consequat. Donec congue commodo mi, sed commodo velit fringilla ac. Fusce placerat venenatis mi. Pellentesque habitant morbi tristique senectus et netus et malesuada .</p>
+								<p>{{$user->about_me}}</p>
 								<div class="clearfix"></div>
 								<span class="user-follow-me">Follow Me</span>
-								<a href="#" original-title="Facebook" class="tooltip-n">
+								<a href="{{$user->facebook}}" original-title="Facebook" class="tooltip-n">
 									<span class="icon_i">
 										<span class="icon_square" icon_size="30" span_bg="#3b5997" span_hover="#2f3239" style="height: 30px; width: 30px; font-size: 15px; line-height: 30px; background-color: rgb(59, 89, 151); border-style: solid;">
 											<i class="social_icon-facebook"></i>
 										</span>
 									</span>
 								</a>
-								<a href="#" original-title="Twitter" class="tooltip-n">
+								<a href="{{$user->twitter}}" original-title="Twitter" class="tooltip-n">
 									<span class="icon_i">
 										<span class="icon_square" icon_size="30" span_bg="#00baf0" span_hover="#2f3239" style="height: 30px; width: 30px; font-size: 15px; line-height: 30px; background-color: rgb(0, 186, 240); border-style: solid;">
 											<i class="social_icon-twitter"></i>
 										</span>
 									</span>
 								</a>
-								<a href="#" original-title="Linkedin" class="tooltip-n">
+								<a href="{{$user->linkedin}}" original-title="Linkedin" class="tooltip-n">
 									<span class="icon_i">
 										<span class="icon_square" icon_size="30" span_bg="#006599" span_hover="#2f3239" style="height: 30px; width: 30px; font-size: 15px; line-height: 30px; background-color: rgb(0, 101, 153); border-style: solid;">
 											<i class="social_icon-linkedin"></i>
 										</span>
 									</span>
 								</a>
-								<a href="#" original-title="Google plus" class="tooltip-n">
+								<a href="{{$user->google_plus}}" original-title="Google plus" class="tooltip-n">
 									<span class="icon_i">
 										<span class="icon_square" icon_size="30" span_bg="#c43c2c" span_hover="#2f3239" style="height: 30px; width: 30px; font-size: 15px; line-height: 30px; background-color: rgb(196, 60, 44); border-style: solid;">
 											<i class="social_icon-gplus"></i>
 										</span>
 									</span>
 								</a>
-								<a href="#" original-title="Email" class="tooltip-n">
+								<a href="{{$user->email}}" original-title="Email" class="tooltip-n">
 									<span class="icon_i">
 										<span class="icon_square" icon_size="30" span_bg="#000" span_hover="#2f3239" style="height: 30px; width: 30px; font-size: 15px; line-height: 30px; background-color: rgb(0, 0, 0); border-style: solid;">
 											<i class="social_icon-email"></i>

@@ -23,7 +23,7 @@
 								</p>
 								<p>
 									<label>Website</label>
-									<input type="text" value="{{ $user->website }}">
+									<input type="text" name="website" value="{{ $user->website }}">
 								</p>
 								<!-- <p>
 									<label class="required">Password<span>*</span></label>
@@ -38,7 +38,7 @@
 									<select name="country">
 										<option></option>
 										@foreach($countries as $country)
-											<option value="{{ $country->id }}"> {{ $country->name }} </option>
+											<option value="{{ $country->id }}" <?php echo ($user->country_id == $country->id)?'selected':'' ?> > {{ $country->name }} </option>
 										@endforeach
 									</select>
 								</p>

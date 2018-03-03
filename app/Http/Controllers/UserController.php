@@ -11,7 +11,11 @@ class UserController extends Controller
 {
     public function index()
     {
-    	return View::make('userprofile.index');
+    	$user = Auth::user();
+
+    	return View::make('userprofile.index',[
+    		'user' => $user
+    	]);
     }
 
     public function getEdit()

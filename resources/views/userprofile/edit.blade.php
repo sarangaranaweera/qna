@@ -6,7 +6,7 @@
 					<div class="boxedtitle page-title"><h2>Edit Profile</h2></div>
 					
 					<div class="form-style form-style-4">
-						<form method="POST" action="/user/edit">
+						<form method="POST" action="/user/edit" enctype="multipart/form-data">
 							@csrf
 							<div class="form-inputs clearfix">
 								<p>
@@ -47,13 +47,9 @@
 								<div class="user-profile-img"><img src="/images/avatar.jpg" alt="admin"></div>
 								<p class="user-profile-p">
 									<label>Profile Picture</label>
-									</p><div class="fileinputs">
-										<input class="file" type="file">
-										<div class="fakefile">
-											<button type="button" class="button small margin_0" style="">Select file</button>
-											<span><i class="icon-arrow-up"></i>Browse</span>
-										</div>
-									</div>
+									</p>
+										<input class="file" type="file" name="profile">
+								
 								<p></p>
 								<div class="clearfix"></div>
 								<p>

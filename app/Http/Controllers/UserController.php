@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use View;
 use Auth;
 use App\Country;
+use App\Lib\Upload;
 
 class UserController extends Controller
 {
@@ -32,7 +33,14 @@ class UserController extends Controller
     public function postEdit(Request $request)
     {
     	$user = Auth::user();
+
+        // $file = $request->file('profile');
+
+        // Upload::uploadFile($file,'images');
+
+        // $file->move('images',$file->getClientOriginalName());
   
+        // dd($request->all());
 
     	$user->first_name = $request->get('first_name');
     	$user->last_name = $request->get('last_name');

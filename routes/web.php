@@ -28,4 +28,7 @@ Route::middleware(['auth'])->group(function(){
 	Route::get('/user/edit', 'UserController@getEdit');
 	Route::post('/user/edit', 'UserController@postEdit');
 
+	Route::get('/question/create', 'QuestionController@getCreate')->name('question_get_create');
+	Route::post('/question/create', 'QuestionController@postCreate')->name('question_post_create');
+
 });
